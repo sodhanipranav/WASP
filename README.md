@@ -1,19 +1,9 @@
 # WASP
 
-Using data from past matches, it is possible to predict the score of the team batting in the
-first innings given the running circumstances of the limited overs match. The entire work
-involves a dynamic programming model and thus works backwards to calculate the total
-runs.
+Cricket - Winning and Score Prediction Model
 
-Let E(b,w) be the expected additional no. of runs to be made when b balls have been
-bowled and w wickets have fallen. Further, let r(b,w) be the expected runs to be made in
-the ball no. b+1 when w wickets have fallen and let p(b,w) be the probability of losing a
-wicket on the ball no. b+1 when w wickets have already fallen.
+The model predicts first innings score and second innings winning probability for a limited overs game using a dynamic programming approach and training over one day cricket matches data set.
 
-E[b,w] = r(b,w) + E(b+1,w+1)*p(b,w) + E(b+1,w)*(1-p(b,w))
+All codes (R), server and ui files (for shiny apps) have been included.
 
-Boundary Condition:
-Since no additional runs are to be made after 300 balls in an ODI match, we set E(300, w)
-= 0 (where w = 0, 1, ... , 10). Using this condition, the model can be solved backwards to
-calculate the entire E matrix.
-
+Theoretical explanation of the first and second innings models can be found in the PDFs.
