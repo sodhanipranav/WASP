@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{hyperref}
+\hypersetup{pdfstartview={FitH}}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={210mm,297mm},
+ left=35mm,
+ right=35mm,
+ top=35mm,
+ bottom=35mm,
+ }
+\usepackage{epstopdf}
+%\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{ragged2e}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\titleformat{\section}[wrap]
+{\normalfont\fontsize{20}{20}\bfseries}
+{\thesection.}{0.5em}{}
+ 
+\titlespacing{\section}{20pc}{5ex plus .1ex minus .2ex}{1pc}
+
+\usepackage{graphicx}
+ \usepackage{caption}
+\usepackage{float}
+\usepackage{amsmath}
+\begin{document}
+\begin{center} 
+\Large{\textbf{Cricket Score Prediction Model - First Innings}}
+\end{center}
+\vspace{5mm}
+Using data from past matches, it is possible to predict the score of the team batting in the first innings given the running circumstances of the limited overs match. The entire work involves a dynamic programming model and thus works backwards to calculate the total runs.
+\\
+\\
+ Let \textit{E(b,w)} be the expected additional no. of runs to be made when \textit{b} balls have been bowled and \textit{w} wickets have fallen. Further, let \textit{r(b,w)} be the expected runs to be made in the ball no. \textit{b+1} when \textit{w} wickets have fallen and let \textit{p(b,w)} be the probability of losing a wicket on the ball no. \textit{b+1} when \textit{w} wickets have already fallen.
+\\
+\\
+E(b,w) = r(b,w) + E(b+1,w+1)*p(b,w) + E(b+1,w)*(1-p(b,w))
+\\
+\\
+\textbf{Boundary Condition}
+\\
+Since no additional runs are to be made after 300 balls in an ODI match, we set E(300, w) = 0 (where w = 0, 1, ... , 10). Using this condition, the model can be solved backwards to calculate the entire E matrix.
+\vspace{5mm}
+\\
+------------------\\
+Pranav Sodhani \\
+Email: sodhanipranav@gmail.com 
+\end{document}

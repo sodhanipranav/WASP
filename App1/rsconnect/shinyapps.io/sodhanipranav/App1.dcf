@@ -1,0 +1,10 @@
+name: App1
+account: sodhanipranav
+server: shinyapps.io
+appId: 114405
+bundleId: 539546
+url: https://sodhanipranav.shinyapps.io/App1/
+when: 1472029793.29735
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Cricket_Train_new.csv|secondinnings.R
